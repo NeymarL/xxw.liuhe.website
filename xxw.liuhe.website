@@ -1,0 +1,48 @@
+server{
+    listen 80;
+    server_name  xxw.liuhe.website;
+    set $root_folder "/var/www/xxw.liuhe.website";
+
+    root         $root_folder;
+    index        index.php index.html index.htm;
+
+    gzip off;
+
+    charset      utf-8;
+    
+    client_max_body_size 100m;
+
+    location ~ .(gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG)$ {
+        root $root_folder/resources/images;
+        expires 10d;
+    }
+
+    location ~ .(js)$ {
+	   root $root_folder/resources/js;
+	   expires 10d;
+    }
+
+    location ~ .(css)$ {
+	    root $root_folder/resources/css;
+	    expires 10d;
+    }
+
+    location ~ .(eot|svg|ttf|otf|woff|woff2) {
+	    root $root_folder/resources/font;
+        expires 10d;
+    }
+
+    location ~ /index.php/ {
+        fastcgi_param  SCRIPT_FILENAME  $root_folder/index.php;
+        fastcgi_pass 127.0.0.1:9000;
+        include fastcgi_params;
+        fastcgi_param PATH_INFO $fastcgi_script_name;
+    }
+
+    location / {
+        root  $root_folder;
+        rewrite ^/(.*)$ /index.php/$1 last;
+    } 
+
+}  
+

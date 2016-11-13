@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>XXW</title> 
+<!-- For-Mobile-Apps-and-Meta-Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Matchmaking Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, SmartPhone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //For-Mobile-Apps-and-Meta-Tags -->
+<!-- Custom Theme files -->
+<link href="<?php echo base_url('bootstrap.css'); ?>" type="text/css" rel="stylesheet" media="all">
+<link href="<?php echo base_url('style.css'); ?>" type="text/css" rel="stylesheet" media="all"> 
+<link rel='stylesheet' id='fluid_dg-css'  href='<?php echo base_url('fluid_dg.css'); ?>' type='text/css' media='all'>
+<link href="<?php echo base_url('popuo-box.css'); ?>" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- font-awesome icons -->
+<link href="<?php echo base_url('font-awesome.css'); ?>" rel="stylesheet" type="text/css" media="all" /> 
+<!-- //font-awesome icons -->
+<!-- js -->
+<script type='text/javascript' src='<?php echo base_url('jquery-2.2.3.min.js'); ?>'></script>
+<!-- //js -->
+<!-- web-fonts -->  
+<link href='//fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- //web-fonts -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+</head>
+<body class="bg">
+<!-- menu -->
+    <button class="btn-nav w3layouts_btn">
+        <span class="bar arrow-top-r"></span>
+        <span class="bar arrow-middle-r"></span>
+        <span class="bar arrow-bottom-r"></span>
+    </button>
+    <nav class="nav-container hidden hideNav w3_nav">
+      <ul class="nav-list">
+        <li class="list-item active"><a href="main.html"><i class="glyphicon glyphicon-home" aria-hidden="true"></i></a></li>
+        <li class="list-item"><a href="about.html"><i class="glyphicon glyphicon-info-sign" aria-hidden="true"></i></a></li>
+        <li class="list-item"><a href="services.html"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i></a></li>
+        <li class="list-item"><a href="short-codes.html"><i class="glyphicon glyphicon-text-size" aria-hidden="true"></i></a></li>
+        <li class="list-item"><a href="gallery.html"><i class="glyphicon glyphicon-picture" aria-hidden="true"></i></a></li>
+        <li class="list-item"><a href="contact.html"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></a></li>
+      </ul>
+    </nav>
+    <div id="ban" class="agileinfo_menu w3l_menu">
+        <div class="agileinfo_menu_left">
+            <h1><a href="main.html">Photographing <br><span> For Every <i>Meaningful Day</i></span></a></h1>
+        </div>
+        <div class="agileinfo_menu_right">
+            <ul>
+                <li><a href="#small-dialog" class="play-icon popup-with-zoom-anim">登陆</a></li>
+                <li><a href="#small-dialog1" class="play-icon popup-with-zoom-anim"> &nbsp;注册</a></li>
+            </ul>
+            <div class="agileinfo_menu_right_pos">
+                <p>or</p>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+<!-- //menu -->
+<!-- pop-up-box -->
+    <div id="small-dialog" class="mfp-hide w3ls_small_dialog">
+            
+        <div class="modal-body agileits_modal_body">
+             <form action="user/login" method="post">
+                <span>
+                    <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+                    <input type="email" name="username" placeholder="用户名" required=""/>
+                </span>
+                <span class="w3_modal">
+                    <i class="glyphicon glyphicon-lock" aria-hidden="true"></i>
+                    <input type="text" name="password" placeholder="密码" required=""/>
+                </span>
+                <div class="agile_remember">
+                    <div class="agile_remember_left">
+                        <div class="check">
+                            <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>记住密码</label>
+                        </div>
+                    </div>
+                    <div class="agile_remember_right">
+                        <a href="#">忘记密码?</a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <input type="submit" value="Sign In">
+            </form>
+            <h4>使用其他方式登陆</h4>
+            <div class="social_icons agileinfo_social_asd">
+                <!-- Social Sign In -->
+                <a href="#" class="slide-social wthree_slide_social">
+                   
+                </a>
+                <!-- Social Medium -->
+                <a href="#" class="slide-social wthree_slide_social">
+                   
+                </a>
+            </div>
+            <h5>没有账号？<a href="#small-dialog1" class="play-icon popup-with-zoom-anim">现在注册！</a></h5>
+        </div>
+    </div>
+    <div id="small-dialog1" class="mfp-hide">
+            
+        <div class="modal-body w3_agileits_modal_body">
+            <form action="user/regisiter" method="post">
+               
+                <div class="w3_modal_body_grid w3_modal_body_grid1">
+                    <span>设置一个昵称</span>
+                    <input type="text" name="username" placeholder=" " required=""/>
+                </div>
+                <div class="w3_modal_body_grid">
+                    <span>性别</span>
+                    <div class="w3_gender">
+                        <div class="colr ert">
+                            <label class="radio"><input type="radio" name="gender" checked=""><i></i> <img src="<?php echo base_url('ys-性别男yellow.png'); ?>" class="sex" width="20px"></label>
+                        </div>
+                        <div class="colr">
+                            <label class="radio"><input type="radio" name="gender"><i></i><img src="<?php echo base_url('ys-性别女.png'); ?>" class="sex" width="20px"></label>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                
+                
+               
+                <div class="w3_modal_body_grid w3_modal_body_grid1">
+                    <span>密码</span>
+                    <input type="password" name="password" placeholder=" " required=""/>
+                </div>
+                <input type="submit" value="Sign Up">
+            </form>
+            
+            <h5>已有账号 <a href="#small-dialog" class="play-icon popup-with-zoom-anim">登陆</a></h5>
+        </div>
+    </div>
+                <script src="<?php echo base_url('jquery.magnific-popup.js'); ?>" type="text/javascript"></script>
+                <script>
+                    $(document).ready(function() {
+                    $('.popup-with-zoom-anim').magnificPopup({
+                        type: 'inline',
+                        fixedContentPos: false,
+                        fixedBgPos: true,
+                        overflowY: 'auto',
+                        closeBtnInside: true,
+                        preloader: false,
+                        midClick: true,
+                        removalDelay: 300,
+                        mainClass: 'my-mfp-zoom-in'
+                    });
+                                                                                    
+                    });
+                </script>
+<!--//pop-up-box -->
+	
+
+<!-- banner -->
+    <div class="banner">
+        <div class="fluid_dg_wrap fluid_dg_emboss pattern_1 fluid_dg_white_skin" id="fluid_dg_wrap_4">
+            <div data-thumb="<?php echo base_url('1-.jpg'); ?>" data-src="<?php echo base_url('1.jpg"'); ?>>
+            </div>
+            <div data-thumb="<?php echo base_url('2-.jpg'); ?>" data-src="<?php echo base_url('2.jpg"'); ?>></div>
+            <div data-thumb="<?php echo base_url('3-.jpg'); ?>" data-src="<?php echo base_url('3.jpg"'); ?>></div>
+            <div data-thumb="<?php echo base_url('4-.jpg'); ?>" data-src="<?php echo base_url('4.jpg"'); ?>></div>
+            <div data-thumb="<?php echo base_url('5-.jpg'); ?>" data-src="<?php echo base_url('5.jpg"'); ?>></div>
+        </div>
+    </div>
+
+
+<!--主页推荐-->
+<script type='text/javascript' src='<?php echo base_url('jquery.easing.1.3.js'); ?>'></script> 
+<script type='text/javascript' src='<?php echo base_url('fluid_dg.min.js'); ?>'></script> 
+<!--图片特效-->
+<script>jQuery(document).ready(function(){
+    jQuery(function(){          
+        jQuery('#fluid_dg_wrap_4').fluid_dg({height: 'auto', loader: 'bar', pagination: false, thumbnails: true, hover: false, opacityOnGrid: false, imagePath: ''});
+    }); })
+</script>
+<!-- //banner -->
+    <div class="banner-bottom1">
+        <h3>给你不一样的校园</h3>
+        <div class="more m1">
+            <a href="contact.html" class="sim-button button9"><span>Join Us</span></a>
+        </div>
+    </div>
+    <div >
+		<input id="img" type="file" accept="image/*" />
+	</div>
+
+<!-- 个人设置 -->
+<script>
+ $(window).load(function() {
+   $(".btn-nav").on("click tap", function() {
+     $(".nav-container").toggleClass("showNav hideNav").removeClass("hidden");
+     $(this).toggleClass("animated");
+   });
+ });
+</script>
+<!-- //nav -->
+</body>
+</html>

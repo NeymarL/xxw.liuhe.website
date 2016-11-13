@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+      
+
+.upload{ position:relative;width:340px}
+.txt{ height:187px; border:1px solid white; width:200px;background: url(images/camera.png);background-size: 100% 100%;}
+.imgFile{ position:absolute; top:0; right:80px; height:190px; filter:alpha(opacity:0);opacity: 0;width:250px;}
+    </style>
+</head>
+<body>
+ <div class="upload">
+    <form action="" method="post" enctype="multipart/form-data">
+    <img src="images/camera.png">
+    <input type="file" name="fileField" class="imgFile" accept="image/*" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />
+  </form>
+</div>
+
+</body>
+</html>
