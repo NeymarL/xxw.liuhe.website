@@ -69,6 +69,7 @@
 <!-- pop-up-box -->
     <div id="small-dialog" class="mfp-hide w3ls_small_dialog">
         <div class="modal-body agileits_modal_body">
+             <?php echo validation_errors(); ?>
              <form action="/user/login" method="post">
                 <span>
                     <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
@@ -109,6 +110,7 @@
     </div>
     <div id="small-dialog1" class="mfp-hide">
         <div class="modal-body w3_agileits_modal_body">
+            <?php echo validation_errors(); ?>
             <form action="/user/register" method="post">
                
                 <div class="w3_modal_body_grid w3_modal_body_grid1">
