@@ -47,6 +47,7 @@ class User extends MY_Controller
         }
 
         // todo jumpto home page
+        $this->jumpto(base_url('/user/home'));
     }
 
     /**
@@ -71,6 +72,7 @@ class User extends MY_Controller
         }
 
         // todo jumpto home page
+        $this->jumpto(base_url('/user/home'));
     }
 
     /**
