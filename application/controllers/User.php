@@ -16,8 +16,10 @@ class User extends MY_Controller
     public function home()
     {
         $uid = $this->session->uid;
-
-        $data = array();
+        $posts = $this->timeline->get_newest(100, 0);
+        $data = array(
+            'posts' => $posts,
+        );
         if ($uid) {
             $data['uid'] = $uid;
             $user = $this->users->get_user_info($uid);

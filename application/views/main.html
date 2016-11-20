@@ -201,19 +201,21 @@
     </a>
 </div>
 
+<?php foreach($posts as $post): ?>
 <!-- One post -->
 <div class="footer-top">
     <div class="w3_footer_top_left"></div>
     <div class="w3_footer_top_right"> 
-        <img class = "text-headImg" src = "./images/太阳.png"/>
-        <h5 class="text-Nickname"> 小小碗</h5>
-        <img src="./images/bike.jpg" class="img-responsive" />
-        <h5 class="text_say" >A bike and a new day!</h5>
+        <a href="/user/account"><img class = "text-headImg" src = "/default.png"/>
+        <h5 class="text-Nickname"><?php echo $post['name']; ?></h5></a>
+        <img src="<?php echo base_url($post['image']); ?>" class="img-responsive" />
+        <h5 class="text_say" ><?php echo $post['describe']; ?></h5>
         <span class="glyphicon glyphicon-thumbs-up text_like" aria-hidden="true"></span> 
         <span class="glyphicon glyphicon-thumbs-down text_dislike" aria-hidden="true" ></span>
     </div>
     <div class="clearfix"></div>
 </div>
+<?php endforeach; ?>
      
 <script type="text/javascript">
     $("document").ready(function(){
