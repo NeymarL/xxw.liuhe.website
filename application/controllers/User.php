@@ -26,6 +26,11 @@ class User extends MY_Controller
         $this->load->view('main.html', $data);
     }
 
+    public function post()
+    {
+        $this->load->view('send.html');
+    }
+
     public function account()
     {
         $this->load->view('services.html');
