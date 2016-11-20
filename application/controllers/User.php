@@ -40,7 +40,7 @@ class User extends MY_Controller
         $user = $this->users->get_user_info($uid);
         $data = array(
             'posts' => $posts,
-            'head' => $user['head'],
+            'head' => base_url($user['head']),
         );
         $this->load->view('services.html', $data);
     }
@@ -126,7 +126,7 @@ class User extends MY_Controller
             $this->long_jumpto('/user/post', $error);
         } else {
             $filename = $this->upload->data('file_name');
-            $url = base_url($filename);
+            $url = base_url($filename . '.png');
         }
         return $url;
     }
