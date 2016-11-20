@@ -74,11 +74,11 @@
     <div id="#hide1">
         <form name="form0" id="form0" >
         <img src="/camera.png" width="10px" class="img_camera0">
-        <input type="file" name="file0" id="file0" multiple="multiple"  accept="image/*" class="imgFile" onclick = "toggle('#hide1')" /><br>
-        </form>
+        <input type="file" name="image" id="file0" accept="image/*" class="imgFile" onclick = "toggle('#hide1')" /><br>
+        
     </div>
     <div class="input_Text">
-      <textarea placeholder="最多输入60个字符" maxlength="60" onclick = "toggle('#hide2')" >
+      <textarea placeholder="最多输入60个字符" maxlength="60" name="describe" onclick = "toggle('#hide2')" >
         
       </textarea>
 
@@ -90,7 +90,6 @@
     </div>
      <div class="sendFoot">
      <img src="/recommend.png" class="recommend">
-     <form>
         <input type="submit" name="send">
      </form>
      </div>

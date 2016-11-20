@@ -34,7 +34,15 @@ class User extends MY_Controller
 
     public function account()
     {
-        $this->load->view('services.html');
+        $this->check_login();
+        $uid = $this->session->uid;
+        $posts = $this->timeline->get_ones_post($uid);
+        $user = $this->users->get_user_info($uid);
+        $data = array(
+            'posts' => $posts,
+            'head' => $user['head'];
+        );
+        $this->load->view('services.html', $data);
     }
 
     /**
@@ -91,90 +99,36 @@ class User extends MY_Controller
         $this->jumpto(base_url('/user/home'));
     }
 
-    /**
-     * get user info
-     * method : GET
-     */
-    public function info($uid)
+    public function new_post()
     {
-        if (!$uid || $uid == '') {
-            $error = $this->lang->line('prompt_auth_out_date');
-            $this->make_error_response($error, $error, HTTP_BAD_REQUEST);
-        }
-
-        $user = $this->users->get_user_info($uid);
-
-        if (!$user) {
-            $error = $this->lang->line('prompt_user_not_exist');
-            $this->make_error_response($error, $error,
-                HTTP_BAD_REQUEST);
-        }
-
+        $this->check_login();
+        $this->validate_form('post');
+        $image = $this->upload_image();
+        $describe = $this->input->post('describe');
+        $uid = $this->session->uid;
+        $this->timeline->new_post($user_id, $image, $describe);
+        $this->jumpto('/user/account');
     }
 
-    /**
-     * update user name and gender
-     * method : POST
-     */
-    public function update_user_info()
+    private function upload_image()
     {
-
-        $this->validate_form('update_user');
-
-        $token = $this->input->post('token');
-        $name = $this->input->post('name');
-
-        $uid = $this->get_uid_from_token($token);
-
-        $update_fields = array(
-            'name' => $name,
-        );
-
-        if (!$this->users->update_user($uid, $update_fields)) {
-            $error = $this->lang->line('prompt_database_error');
-            make_error_response($error, $error,
-                HTTP_INTERNAL_SERVER_ERROR);
-        }
-
-    }
-
-    /**
-     * 更换头像
-     * @return [type] [description]
-     */
-    public function change_head()
-    {
-        $token = $this->input->post('token');
-        $uid = $this->get_uid_from_token($token);
-
         $config['upload_path'] = './resources/images/';
         $config['allowed_types'] = 'jpg|png|gif|jpeg';
         $config['max_size'] = 2048;
         $config['encrypt_name'] = true;
 
         $this->load->library('upload', $config);
+        $url = '';
 
         if (!$this->upload->do_upload('image')) {
             $error = $this->upload->display_errors();
-            $this->make_error_response($error, $error, HTTP_BAD_REQUEST);
+            // $this->make_error_response($error, $error, HTTP_BAD_REQUEST);
+            $this->long_jumpto('/user/post', $error);
         } else {
             $filename = $this->upload->data('file_name');
             $url = base_url($filename);
-            $update_array = array('head' => $filename);
-            if (!$this->users->update_user($uid, $update_array)) {
-                $error = $this->lang->line('prompt_database_error');
-                $this->make_error_response($error, $error,
-                    HTTP_INTERNAL_SERVER_ERROR);
-            }
-            $response = array(
-                'code' => REQUEST_SUCCESS,
-                'msg' => SUCCESS_MESSAGE,
-                'data' => array(
-                    'url' => $url,
-                ),
-            );
-            api_output($response, HTTP_OK);
         }
+        return $url;
     }
 
     private function validate_form($rules)
@@ -216,7 +170,7 @@ class User extends MY_Controller
         if ($uid) {
             return true;
         }
-        $this->jumpto(base_url('v1/admin/signin'));
+        $this->long_jumpto(base_url('home'), '发皂片要先登录哦');
     }
 
 }

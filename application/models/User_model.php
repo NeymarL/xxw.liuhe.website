@@ -61,7 +61,7 @@ CREATE TABLE `user` (
         $this->db->from($this->table_name);
         $this->db->where('user_id', $uid);
         $result = $this->db->get()->result_array();
-        return count($result) > 0 ? $result[0] : false;
+        return count($result) > 0 ? $result[0] : array();
     }
 
     public function get_user_num()

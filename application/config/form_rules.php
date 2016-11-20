@@ -84,35 +84,13 @@ $config = array(
             ),
         ),
     ),
-    // 忘记密码
-    'forget' => array(
+    'post' => array(
         array(
-            'field' => 'phone',
-            'label' => '手机号',
-            'rules' => 'trim|required|max_length[14]|integer',
-            'errors' => array(
-                'max_length' => '自定义内容不能超过{param}字',
-                'required' => '请填写手机号',
-                'integer' => '手机号只能包含数字',
-
-            ),
-        ),
-        array(
-            'field' => 'password',
-            'label' => '密码',
+            'field' => 'describe',
+            'label' => '说说',
             'rules' => 'trim|required|max_length[60]',
             'errors' => array(
-                'max_length' => '密码长度应小于{param}位',
-                'required' => '请填写新密码',
-            ),
-        ),
-        array(
-            'field' => 'SMScode',
-            'label' => '验证码',
-            'rules' => 'trim|required|max_length[7]|integer',
-            'errors' => array(
-                'required' => '请填写验证码',
-                'integer' => '非法的验证码',
+                'max_length' => '自定义内容不能超过{param}字',
             ),
         ),
     ),

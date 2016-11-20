@@ -69,7 +69,7 @@ FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
             ->order_by('time', 'DESC')
             ->get()
             ->result_array();
-        return count($result) > 0 ? $result : false;
+        return count($result) > 0 ? $result : array();
     }
 
 }

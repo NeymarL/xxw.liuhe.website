@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home Page</title> 
+<title>给你不一样的校园</title> 
 <!-- For-Mobile-Apps-and-Meta-Tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,15 +15,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //For-Mobile-Apps-and-Meta-Tags -->
 <!-- Custom Theme files -->
-<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="css/style.css" type="text/css" rel="stylesheet" media="all"> 
-<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="/style.css" type="text/css" rel="stylesheet" media="all"> 
+<link href="/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 <!-- //Custom Theme files -->
 <!-- font-awesome icons -->
-<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /> 
+<link href="/font-awesome.css" rel="stylesheet" type="text/css" media="all" /> 
 <!-- //font-awesome icons -->
 <!-- js -->
-<script type='text/javascript' src='js/jquery-2.2.3.min.js'></script>
+<script type='text/javascript' src='/jquery-2.2.3.min.js'></script>
 <!-- //js -->
 <!-- web-fonts -->  
 <link href='//fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
@@ -47,17 +47,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</button>
 	<nav class="nav-container hidden hideNav w3_nav">
 	  <ul class="nav-list">
-		<li class="list-item"><a href="main.html"><i class="glyphicon glyphicon-home" aria-hidden="true"></i></a></li>
-		<li class="list-item"><a href="about.html"><i class="glyphicon glyphicon-info-sign" aria-hidden="true"></i></a></li>
-		<li class="list-item active"><a href="services.html"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i></a></li>
-		<li class="list-item"><a href="short-codes.html"><i class="glyphicon glyphicon-text-size" aria-hidden="true"></i></a></li>
-		<li class="list-item"><a href="gallery.html"><i class="glyphicon glyphicon-picture" aria-hidden="true"></i></a></li>
-		<li class="list-item"><a href="contact.html"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></a></li>
+        <li class="list-item active"><a href="/"><i class="glyphicon glyphicon-home" aria-hidden="true"></i></a></li>
+        <!--<li class="list-item"><a href="about.html"><i class="glyphicon glyphicon-info-sign" aria-hidden="true"></i></a></li>-->
+        <li class="list-item"><a href="/user/account"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i></a></li>
+        <!--<li class="list-item"><a href="short-codes.html"><i class="glyphicon glyphicon-text-size" aria-hidden="true"></i></a></li>
+        <li class="list-item"><a href="gallery.html"><i class="glyphicon glyphicon-picture" aria-hidden="true"></i></a></li>
+        <li class="list-item"><a href="contact.html"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></a></li>-->
 	  </ul>
 	</nav>
 	<div id="ban" class="agileinfo_menu w3l_menu">
 		<div class="agileinfo_menu_left">
-            <h1><a href="main.html">Home  Page</a></h1>
+            <h1><a href="main.html">个人主页</a></h1>
         </div>
 		<div class="agileinfo_menu_right">
             
@@ -72,13 +72,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- banner -->
 	<div class="portrait">
 		<div class="icon">
-			<img src="images/太阳.png">
+			<img src="<?php echo $head; ?>">
 		</div>
 	</div>
 <!-- //banner -->
 <!-- services -->
 	<div class="after_log_upload">
-        <a href = "send.html">  
+        <a href = "/user/post">  
                    
                    <span class="glyphicon glyphicon-plus-sign send" aria-hidden="true"></span>
                
@@ -89,27 +89,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   <span class="glyphicon glyphicon-heart Heart" ></span>  
             </a>
     </div>
-    <!-- footer-top -->
+    <?php foreach($post in $posts): ?>
+    <!-- One post -->
     <div class="footer-top">
-        <div class="w3_footer_top_left">
-            
-        </div>
-        <div class="w3_footer_top_right">
-            
-                <img class = "text-headImg" src = "./images/太阳.png"/>
-                <h5 class="text-Nickname"> 小小碗</h5>
-
+        <div class="w3_footer_top_left"></div>
+        <div class="w3_footer_top_right"> 
+            <img class = "text-headImg" src = "<?php echo $post['image']; ?>"/>
+            <h5 class="text-Nickname"><?php echo $post['name']; ?></h5>
             <img src="./images/bike.jpg" class="img-responsive" />
-            
-            <h5 class="text_say" >A bike and a new day!</h5>
-
-             <span class="glyphicon glyphicon-thumbs-up text_like" aria-hidden="true"></span> 
+            <h5 class="text_say" ><?php echo $post['describe']; ?></h5>
+            <span class="glyphicon glyphicon-thumbs-up text_like" aria-hidden="true"></span> 
             <span class="glyphicon glyphicon-thumbs-down text_dislike" aria-hidden="true" ></span>
-
-
         </div>
-        <div class="clearfix"> </div>
+        <div class="clearfix"></div>
     </div>
+    <?php endforeach; ?>
      
     <script type="text/javascript">
         $("document").ready(function(){

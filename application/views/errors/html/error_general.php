@@ -58,7 +58,7 @@ p {
 <body>
 	<div id="container">
 		<h1><?php echo $error; ?></h1>
-		<a href="<?php echo $url; ?>">返回首页</a>
+		<a href="<?php echo $url; ?>">返回</a>
 	</div>
 </body>
 </html>
