@@ -40,7 +40,7 @@ class User extends MY_Controller
         $user = $this->users->get_user_info($uid);
         $data = array(
             'posts' => $posts,
-            'head' => $user['head'];
+            'head' => $user['head'],
         );
         $this->load->view('services.html', $data);
     }
