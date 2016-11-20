@@ -127,6 +127,7 @@ class User extends MY_Controller
         $image = $this->upload_image();
         $update_array = array('head' => $image);
         $this->users->update_user($uid, $update_array);
+        $this->jumpto('/user/account');
     }
 
     private function upload_image()
