@@ -4,8 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User extends MY_Controller
 {
-    public $error = '';
-
     public function __construct()
     {
         parent::__construct();
@@ -18,10 +16,12 @@ class User extends MY_Controller
     public function home()
     {
         $uid = $this->session->uid;
-        $data = array('error' => $this->error);
-        $this->error = '';
+
+        $data = array();
         if ($uid) {
             $data['uid'] = $uid;
+            $user = $this->users->get_user_info($uid);
+            $data['head'] = $user['head'];
         }
         $this->load->view('main.html', $data);
     }
@@ -78,8 +78,7 @@ class User extends MY_Controller
 
         if (!validate_passwd($password, $hash)) {
             $res_error = $this->lang->line('prompt_passwd_error');
-            $this->error = $res_error;
-            $this->jumpto('/user/home');
+            $this->long_jumpto('/user/home', $res_error);
         }
 
         $this->session->uid = $uid;
@@ -197,6 +196,12 @@ class User extends MY_Controller
     {
         $data = array('url' => $url);
         $this->load->view('jump.html', $data);
+    }
+
+    private function long_jumpto($url, $error)
+    {
+        $data = array('url' => $url, 'error' => $error);
+        $this->load->view('errors/html/error_general.php', $data);
     }
 
     private function check_login()

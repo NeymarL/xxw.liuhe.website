@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,8 +57,8 @@ p {
 </head>
 <body>
 	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+		<h1><?php echo $error; ?></h1>
+		<a href="<?php echo $url; ?>">返回首页</a>
 	</div>
 </body>
 </html>

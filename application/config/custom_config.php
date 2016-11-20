@@ -3,5 +3,5 @@
 // default user information
 $config['default'] = array(
     'head' => 'default.png',
-    'name' => 'xiaoxiaowan',
+    'name' => 'photographer',
 );
