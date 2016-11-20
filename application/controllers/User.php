@@ -28,6 +28,7 @@ class User extends MY_Controller
 
     public function post()
     {
+        $this->check_login();
         $this->load->view('send.html');
     }
 
