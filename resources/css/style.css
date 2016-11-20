@@ -1715,3 +1715,188 @@ label.radio {
   width: 10px !important;
 }
 
+/*头像*/
+.headImg
+{
+  width: 100px;
+  height: 100px;
+  border: 2px solid #24AB00;
+  margin: 0 auto;
+  border-radius: 50% 50%;
+  overflow: hidden;
+}
+.headImg img
+{
+  width: 90px;
+  height: 90px;
+}
+
+.after_log_upload
+{
+  background: #FEFFE4;
+  border: 1px dashed #999;
+  width: 80%;
+  margin: 0 auto;
+
+}
+.send
+{
+  color: #A3DE83;
+  font-size:40px;
+  position: relative;
+  left: 65%;
+  
+}
+.Heart
+{
+  color: #A3DE83;
+  font-size:40px;
+  position: relative;
+  left: 10%;
+  
+}
+.text-headImg
+{
+  width: 50px;
+  height: 50px;
+  border: 0px;
+  border-radius: 50% 50%;
+ 
+}
+
+.text-Nickname
+{
+  position:relative;
+  top: -32px;
+  left: 80px;
+  color:black;
+}
+
+.text_say
+{
+  color:black;
+  margin: 20px;
+}
+.text_like
+{
+  color:#ccc;
+  font-size: 20px;
+  position: relative;
+  margin: 10px;
+
+  left:90px;
+}
+.text_dislike
+{
+  color:#ccc;
+  font-size: 20px;
+  position: relative;
+  left:110px;
+  margin: 10px;
+}
+
+.uploadText
+{
+  width: 95%;
+  height: 350px;
+  border:10px dashed #beceeb;
+  margin: 0 auto;
+}
+
+.submit
+{
+  position: relative;
+  top:-40px;
+  left: 300px;
+}
+
+
+
+.upload
+{ 
+  position:relative;
+  width:100px;
+  left:220px;}
+.txt
+{ 
+  height:187px; 
+  border:1px solid white; 
+  width:200px;background: url(images/camera.png);
+  background-size: 100% 100%;
+}
+.imgFile
+{ 
+  position:absolute; 
+  top:135px; 
+  left:40px; 
+  height:50px; 
+  filter:alpha(opacity:0);
+  opacity: 0;
+  width:50px;}
+.img_camera0
+{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left:45px;
+  top:-90px;}
+.img_write
+{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left:5px;
+  top:-94px;
+}
+#img0
+{
+  border: 2px dashed #24ab00;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+}
+
+.input_Text
+{
+  border: 2px dashed #24ab00;
+  position: absolute;
+  top:113px;
+  left: 135px;
+  height: 100px;
+  width: 210px;
+
+}
+.input_Text textarea
+{
+  width: 207px;
+  height: 90px;
+  resize: none;
+  
+}
+.sendFoot
+{
+  border: 2px dashed #24ab00;
+  width: 80%;
+  position: absolute;
+  top: 240px;
+  left:10%;
+
+
+}
+.sendFoot input
+{
+  width: 20%;
+  opacity: 0;
+  position: relative;
+  left: 40%;
+
+}
+.sendFoot .recommend
+{
+  height: 20px;
+  position: absolute;
+  top:3px;
+  left: 47%;
+}
+
+

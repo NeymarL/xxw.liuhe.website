@@ -36,7 +36,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
         });
     });
+
 </script>
+    <style type="text/css">
+      
+
+
+    </style>
 </head>
 <body class="bg">
 <!-- menu -->
@@ -67,20 +73,81 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
         <div class="clearfix"> </div>
     </div>
-    <div class="moments">
       
+    <div>
+      <img src="" id="img0">
     </div>
+    <div id="#hide1">
+        <form name="form0" id="form0" >
+        <img src="images/camera.png" width="10px" class="img_camera0">
+        <input type="file" name="file0" id="file0" multiple="multiple"  accept="image/*" class="imgFile" onclick = "toggle('#hide1')" /><br>
+        </form>
+    </div>
+    <div class="input_Text">
+      <textarea placeholder="最多输入60个字符" maxlength="60" onclick = "toggle('#hide2')" >
+        
+      </textarea>
+
+      <div id="#hide2" onclick = "toggle('#hide2')">
+        
+          <img src="images/文字.png" width="10px" class="img_write">
+        
+      </div>
+    </div>
+     <div class="sendFoot">
+     <img src="images/recommend.png" class="recommend">
+     <form>
+        <input type="submit" name="send">
+     </form>
+     </div>
+  </body>
+
+
+      
+
 <!-- //services -->
 
 <!-- //footer -->
 <!-- nav -->
 <script>
+
  $(window).load(function() {
    $(".btn-nav").on("click tap", function() {
      $(".nav-container").toggleClass("showNav hideNav").removeClass("hidden");
      $(this).toggleClass("animated");
    });
  });
+
+ $("#file0").change(function(){
+    var objUrl = getObjectURL(this.files[0]) ;
+    console.log("objUrl = "+objUrl) ;
+    if (objUrl) {
+        $("#img0").attr("src", objUrl) ;
+    }
+}) ;
+//建立一個可存取到該file的url
+function getObjectURL(file) {
+  var url = null ; 
+  if (window.createObjectURL!=undefined) { // basic
+    url = window.createObjectURL(file) ;
+  } else if (window.URL!=undefined) { // mozilla(firefox)
+    url = window.URL.createObjectURL(file) ;
+  } else if (window.webkitURL!=undefined) { // webkit or chrome
+    url = window.webkitURL.createObjectURL(file) ;
+  }
+  return url ;
+}
+
+
+function toggle(targetid){
+    if (document.getElementById){
+        target=document.getElementById(targetid);
+           
+                target.style.display="none";
+           
+    }
+}
+
 </script>
 <!-- //nav -->
 </body>
