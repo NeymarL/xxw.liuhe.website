@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User extends MY_Controller
 {
-    $this->error = '';
+    public $error = '';
 
     public function __construct()
     {
