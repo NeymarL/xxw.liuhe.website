@@ -4,6 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User extends MY_Controller
 {
+    $error = '';
 
     public function __construct()
     {
@@ -14,10 +15,11 @@ class User extends MY_Controller
         $this->load->model('timeline_model', 'timeline');
     }
 
-    public function home($error = '')
+    public function home()
     {
         $uid = $this->session->uid;
-        $data = array('error' => $error);
+        $data = array('error' => $this->error);
+        $this->error = '';
         if ($uid) {
             $data['uid'] = $uid;
         }
@@ -76,7 +78,8 @@ class User extends MY_Controller
 
         if (!validate_passwd($password, $hash)) {
             $res_error = $this->lang->line('prompt_passwd_error');
-            $this->jumpto(/user/home, $res_error);
+            $this->error = $res_error;
+            $this->jumpto('/user/home');
         }
 
         $this->session->uid = $uid;
