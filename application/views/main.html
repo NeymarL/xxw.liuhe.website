@@ -34,6 +34,7 @@
 </script>
 </head>
 <body class="bg">
+<?php echo validation_errors(); ?>
 <!-- menu -->
     <button class="btn-nav w3layouts_btn">
         <span class="bar arrow-top-r"></span>
@@ -78,7 +79,6 @@
 <!-- pop-up-box -->
     <div id="small-dialog" class="mfp-hide w3ls_small_dialog">
         <div class="modal-body agileits_modal_body">
-             <?php echo validation_errors(); ?>
              <form action="/user/login" method="post">
                 <span>
                     <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>

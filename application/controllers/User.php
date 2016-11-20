@@ -14,10 +14,10 @@ class User extends MY_Controller
         $this->load->model('timeline_model', 'timeline');
     }
 
-    public function home()
+    public function home($error = '')
     {
         $uid = $this->session->uid;
-        $data = array();
+        $data = array('error' => $error);
         if ($uid) {
             $data['uid'] = $uid;
         }
@@ -76,9 +76,7 @@ class User extends MY_Controller
 
         if (!validate_passwd($password, $hash)) {
             $res_error = $this->lang->line('prompt_passwd_error');
-            $log_error = $res_error . ' ' . $uid;
-            $this->make_error_response($log_error, $res_error,
-                HTTP_BAD_REQUEST);
+            $this->jumpto(/user/home, $res_error);
         }
 
         $this->session->uid = $uid;
