@@ -118,6 +118,17 @@ class User extends MY_Controller
         $this->jumpto('/user/account');
     }
 
+    public function new_head()
+    {
+        if (!$this->check_login()) {
+            return;
+        }
+        $uid = $this->session->uid;
+        $image = $this->upload_image();
+        $update_array = array('head' => $image);
+        $this->users->update_user($uid, $update_array);
+    }
+
     private function upload_image()
     {
         $config['upload_path'] = './resources/images/';
