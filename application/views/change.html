@@ -1,0 +1,173 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>给你不一样的校园</title> 
+<!-- For-Mobile-Apps-and-Meta-Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Matchmaking Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, SmartPhone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //For-Mobile-Apps-and-Meta-Tags -->
+<!-- Custom Theme files -->
+<link href="/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="/style.css" type="text/css" rel="stylesheet" media="all"> 
+<link href="/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- font-awesome icons -->
+<link href="/font-awesome.css" rel="stylesheet" type="text/css" media="all" /> 
+<!-- //font-awesome icons -->
+<!-- js -->
+<script type='text/javascript' src='/jquery-2.2.3.min.js'></script>
+<!-- //js -->
+<!-- web-fonts -->  
+<link href='//fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- //web-fonts -->
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){     
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+    });
+
+</script>
+ 
+      
+<style type="text/css">
+     #imgHeadUpLoad
+      {
+        border: 2px dashed #24ab00;
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        border-radius: 50% 50%;
+        position: relative;
+        left: 30%;
+      }
+     
+      .imgFileU
+    { 
+    position:absolute; 
+    top:135px; 
+    left:157px; 
+    height:50px; 
+    filter:alpha(opacity:0);
+    opacity: 0;
+   
+    width:50px;
+}
+
+    .img_cameraU
+{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left:160px;
+  top:-90px;}
+</style>
+
+   
+</head>
+<body class="bg">
+<!-- menu -->
+    <button class="btn-nav w3layouts_btn">
+        <span class="bar arrow-top-r"></span>
+        <span class="bar arrow-middle-r"></span>
+        <span class="bar arrow-bottom-r"></span>
+    </button>
+    <nav class="nav-container hidden hideNav w3_nav">
+      <ul class="nav-list">
+        <li class="list-item"><a href="/"><i class="glyphicon glyphicon-home" aria-hidden="true"></i></a></li>
+        <!--<li class="list-item"><a href="about.html"><i class="glyphicon glyphicon-info-sign" aria-hidden="true"></i></a></li>-->
+        <li class="list-item active"><a href="/user/account"><i class="glyphicon glyphicon-info-sign" aria-hidden="true"></i></a></li>
+        <!--<li class="list-item"><a href="short-codes.html"><i class="glyphicon glyphicon-text-size" aria-hidden="true"></i></a></li>
+        <li class="list-item"><a href="gallery.html"><i class="glyphicon glyphicon-picture" aria-hidden="true"></i></a></li>
+        <li class="list-item"><a href="contact.html"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></a></li>-->
+      </ul>
+    </nav>
+    <div id="ban" class="agileinfo_menu w3l_menu">
+        <div class="agileinfo_menu_left">
+            <h1><a href="#">更改头像</a></h1>
+        </div>
+        <div class="agileinfo_menu_right">
+            
+            <div class="agileinfo_menu_right_pos">
+                
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+      
+   <div>
+      <img src="" id="imgHeadUpLoad">
+      <div>
+    <div id="#hide2">
+        <form name="form0" id="form0" action="/user/new_head" method="post" enctype="multipart/form-data">
+            <img src="images/camera.png" width="10px" class="img_cameraU">
+            <input type="file" name="file0" id="file0" multiple="multiple"  accept="image/*" class="imgFileU" onclick = "toggle('#hide2')" /><br>
+    </div>
+
+     <div class="sendFoot">
+     <img src="images/recommend.png" class="recommend">
+        <input type="submit" name="send">
+     </form>
+     </div>
+  </body>
+
+
+      
+
+<!-- //services -->
+
+<!-- //footer -->
+<!-- nav -->
+<script>
+
+ $(window).load(function() {
+   $(".btn-nav").on("click tap", function() {
+     $(".nav-container").toggleClass("showNav hideNav").removeClass("hidden");
+     $(this).toggleClass("animated");
+   });
+ });
+
+ $("#file0").change(function(){
+    var objUrl = getObjectURL(this.files[0]) ;
+    console.log("objUrl = "+objUrl) ;
+    if (objUrl) {
+        $("#imgHeadUpLoad").attr("src", objUrl) ;
+    }
+}) ;
+//建立一個可存取到該file的url
+function getObjectURL(file) {
+  var url = null ; 
+  if (window.createObjectURL!=undefined) { // basic
+    url = window.createObjectURL(file) ;
+  } else if (window.URL!=undefined) { // mozilla(firefox)
+    url = window.URL.createObjectURL(file) ;
+  } else if (window.webkitURL!=undefined) { // webkit or chrome
+    url = window.webkitURL.createObjectURL(file) ;
+  }
+  return url ;
+}
+
+
+function toggle(targetid){
+    if (document.getElementById){
+        target=document.getElementById(targetid);
+           
+                target.style.display="none";
+           
+    }
+}
+
+</script>
+<!-- //nav -->
+</body>
+</html>

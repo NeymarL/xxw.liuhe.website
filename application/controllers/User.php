@@ -53,6 +53,13 @@ class User extends MY_Controller
         $this->load->view('services.html', $data);
     }
 
+    public function change_head()
+    {
+        if ($this->check_login()) {
+            $this->load->view('change.html');
+        }
+    }
+
     /**
      * register interface
      * method : POST
