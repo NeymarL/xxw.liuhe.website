@@ -17,6 +17,10 @@ class User extends MY_Controller
     {
         $uid = $this->session->uid;
         $posts = $this->timeline->get_newest(100, 0);
+        for ($i = 0; $i < count($posts); $i++) {
+            $user_i = $this->users->get_user_info($posts[i]['user_id']);
+            $posts[$i]['head'] = $user_i['head'];
+        }
         $data = array(
             'posts' => $posts,
         );

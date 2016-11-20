@@ -205,7 +205,7 @@
 <div class="footer-top">
     <div class="w3_footer_top_left"></div>
     <div class="w3_footer_top_right"> 
-        <a href="/user/account"><img class = "text-headImg" src = "/default.png"/>
+        <a href="/user/account"><img class = "text-headImg" src = "<?php echo $post['head']; ?>"/>
         <h5 class="text-Nickname"><?php echo $post['name']; ?></h5></a>
         <img src="<?php echo base_url($post['image']); ?>" class="img-responsive" />
         <h5 class="text_say" ><?php echo $post['describe']; ?></h5>
