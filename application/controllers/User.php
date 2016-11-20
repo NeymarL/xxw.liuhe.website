@@ -106,7 +106,7 @@ class User extends MY_Controller
         $image = $this->upload_image();
         $describe = $this->input->post('describe');
         $uid = $this->session->uid;
-        $this->timeline->new_post($user_id, $image, $describe);
+        $this->timeline->new_post($uid, $image, $describe);
         $this->jumpto('/user/account');
     }
 
