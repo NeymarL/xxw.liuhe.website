@@ -42,12 +42,12 @@
     </button>
     <nav class="nav-container hidden hideNav w3_nav">
       <ul class="nav-list">
-        <li class="list-item active"><a href="main.html"><i class="glyphicon glyphicon-home" aria-hidden="true"></i></a></li>
-        <li class="list-item"><a href="about.html"><i class="glyphicon glyphicon-info-sign" aria-hidden="true"></i></a></li>
-        <li class="list-item"><a href="services.html"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i></a></li>
-        <li class="list-item"><a href="short-codes.html"><i class="glyphicon glyphicon-text-size" aria-hidden="true"></i></a></li>
+        <li class="list-item active"><a href="/"><i class="glyphicon glyphicon-home" aria-hidden="true"></i></a></li>
+        <!--<li class="list-item"><a href="about.html"><i class="glyphicon glyphicon-info-sign" aria-hidden="true"></i></a></li>-->
+        <li class="list-item"><a href="/user/account"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i></a></li>
+        <!--<li class="list-item"><a href="short-codes.html"><i class="glyphicon glyphicon-text-size" aria-hidden="true"></i></a></li>
         <li class="list-item"><a href="gallery.html"><i class="glyphicon glyphicon-picture" aria-hidden="true"></i></a></li>
-        <li class="list-item"><a href="contact.html"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></a></li>
+        <li class="list-item"><a href="contact.html"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></a></li>-->
       </ul>
     </nav>
     <div id="ban" class="agileinfo_menu w3l_menu">
@@ -55,6 +55,7 @@
             <h1><a href="/">摄影 <br><span> For Every <i>Meaningful Day</i></span></a></h1>
         </div>
         <div class="agileinfo_menu_right">
+        <?php if (!isset($uid)): ?>
             <ul>
                 <li><a href="#small-dialog" class="play-icon popup-with-zoom-anim">登陆</a></li>
                 <li><a href="#small-dialog1" class="play-icon popup-with-zoom-anim"> &nbsp;注册</a></li>
@@ -62,10 +63,14 @@
             <div class="agileinfo_menu_right_pos">
                 <p>or</p>
             </div>
+        <?php else: ?>
             <!-- 头像 -->
-            <a href=""><div class="headImg">
-                <img src="./images/薯条-FrenchFries.png" >
-            </div></a>
+            <a href="/user/account">
+                <div class="headImg">
+                    <img src="./images/薯条-FrenchFries.png" >
+                </div>
+            </a>
+        <?php endif; ?>
         </div>
         <div class="clearfix"> </div>
     </div>
@@ -196,26 +201,19 @@
         <!--此处上传照片-->
     </a>
 </div>
-    <!-- footer-top -->
+
+<!-- One post -->
 <div class="footer-top">
-    <div class="w3_footer_top_left">
-        
+    <div class="w3_footer_top_left"></div>
+    <div class="w3_footer_top_right"> 
+        <img class = "text-headImg" src = "./images/太阳.png"/>
+        <h5 class="text-Nickname"> 小小碗</h5>
+        <img src="./images/bike.jpg" class="img-responsive" />
+        <h5 class="text_say" >A bike and a new day!</h5>
+        <span class="glyphicon glyphicon-thumbs-up text_like" aria-hidden="true"></span> 
+        <span class="glyphicon glyphicon-thumbs-down text_dislike" aria-hidden="true" ></span>
     </div>
-    <div class="w3_footer_top_right">
-        
-    <img class = "text-headImg" src = "./images/太阳.png"/>
-    <h5 class="text-Nickname"> 小小碗</h5>
-
-    <img src="./images/bike.jpg" class="img-responsive" />
-        
-    <h5 class="text_say" >A bike and a new day!</h5>
-
-    <span class="glyphicon glyphicon-thumbs-up text_like" aria-hidden="true"></span> 
-    <span class="glyphicon glyphicon-thumbs-down text_dislike" aria-hidden="true" ></span>
-
-
-    </div>
-    <div class="clearfix"> </div>
+    <div class="clearfix"></div>
 </div>
      
 <script type="text/javascript">

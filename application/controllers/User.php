@@ -16,7 +16,17 @@ class User extends MY_Controller
 
     public function home()
     {
-        $this->load->view('main.html');
+        $uid = $this->session->uid;
+        $data = array();
+        if ($uid) {
+            $data['uid'] = $uid;
+        }
+        $this->load->view('main.html', $data);
+    }
+
+    public function account()
+    {
+        $this->load->view('services.html');
     }
 
     /**
@@ -46,7 +56,7 @@ class User extends MY_Controller
                 HTTP_INTERNAL_SERVER_ERROR);
         }
 
-        // todo jumpto home page
+        $this->session->uid = $uid;
         $this->jumpto(base_url('/user/home'));
     }
 
@@ -71,7 +81,7 @@ class User extends MY_Controller
                 HTTP_BAD_REQUEST);
         }
 
-        // todo jumpto home page
+        $this->session->uid = $uid;
         $this->jumpto(base_url('/user/home'));
     }
 
@@ -186,6 +196,15 @@ class User extends MY_Controller
     {
         $data = array('url' => $url);
         $this->load->view('jump.html', $data);
+    }
+
+    private function check_login()
+    {
+        $uid = $this->session->uid;
+        if ($uid) {
+            return true;
+        }
+        $this->jumpto(base_url('v1/admin/signin'));
     }
 
 }
