@@ -42,10 +42,9 @@ FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
             ->select('timeline_id, user_id, image, describe, num_likes, time')
             ->from($this->table_name)
             ->order_by('time', 'DESC')
-            ->limit($skip, $num)
             ->get()
             ->result_array();
-        return count($result) > 0 ? $result : false;
+        return count($result) > 0 ? $result : array();
     }
 
     public function get_hotest($num, $skip)
