@@ -30,7 +30,9 @@ class User extends MY_Controller
 
     public function post()
     {
-        $this->check_login();
+        if (!$this->check_login()) {
+            return;
+        }
         $this->load->view('send.html');
     }
 
@@ -173,7 +175,7 @@ class User extends MY_Controller
             return true;
         }
         $this->long_jumpto(base_url('home'), '发皂片要先登录哦');
-        exit;
+        return false;
     }
 
 }
