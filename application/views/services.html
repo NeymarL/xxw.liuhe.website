@@ -132,43 +132,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      $(this).toggleClass("animated");
    });
  });
-
- $("#file0").change(function(){
-    var objUrl = getObjectURL(this.files[0]) ;
-    console.log("objUrl = "+objUrl) ;
-    if (objUrl) {
-        $("#img0").attr("src", objUrl) ;
-    }
-}) ;
-//建立一個可存取到該file的url
-function getObjectURL(file) {
-  var url = null ; 
-  if (window.createObjectURL!=undefined) { // basic
-    url = window.createObjectURL(file) ;
-  } else if (window.URL!=undefined) { // mozilla(firefox)
-    url = window.URL.createObjectURL(file) ;
-  } else if (window.webkitURL!=undefined) { // webkit or chrome
-    url = window.webkitURL.createObjectURL(file) ;
-  }
-  return url ;
-}
-
-
-function toggle(targetid){
-    if (document.getElementById){
-        target=document.getElementById(targetid);
-           
-                target.style.display="none";
-           
-    }
-}
-
- $(window).load(function() {
-   $(".btn-nav").on("click tap", function() {
-     $(".nav-container").toggleClass("showNav hideNav").removeClass("hidden");
-     $(this).toggleClass("animated");
-   });
- });
 </script>
 <!-- //nav -->
 </body>
