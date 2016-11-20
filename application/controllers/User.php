@@ -126,9 +126,7 @@ class User extends MY_Controller
             $this->long_jumpto('/user/post', $error);
         } else {
             $filename = $this->upload->data('file_name');
-            $filename = $filename . '.png';
-            api_output(array('file' => $filename), 200);
-            $url = base_url($filename);
+            $url = $filename;
         }
         return $url;
     }

@@ -96,7 +96,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="w3_footer_top_right"> 
             <img class = "text-headImg" src = "<?php echo $head; ?>"/>
             <h5 class="text-Nickname"><?php echo $post['name']; ?></h5>
-            <img src="<?php echo $post['image']; ?>" class="img-responsive" />
+            <img src="<?php echo base_url($post['image']); ?>" class="img-responsive" />
             <h5 class="text_say" ><?php echo $post['describe']; ?></h5>
             <span class="glyphicon glyphicon-thumbs-up text_like" aria-hidden="true"></span> 
             <span class="glyphicon glyphicon-thumbs-down text_dislike" aria-hidden="true" ></span>
