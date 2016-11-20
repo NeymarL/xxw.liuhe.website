@@ -173,6 +173,7 @@ class User extends MY_Controller
             return true;
         }
         $this->long_jumpto(base_url('home'), '发皂片要先登录哦');
+        exit;
     }
 
 }
